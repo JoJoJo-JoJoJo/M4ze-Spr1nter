@@ -1,0 +1,15 @@
+.border-top {
+  border-top: min(2px, 5%) solid black;
+}
+
+.border-bottom {
+  border-bottom: min(2px, 5%) solid black;
+}
+
+.border-left {
+  border-left: min(2px, 5%) solid black;
+}
+
+.border-right {
+  border-right: min(2px, 5%) solid black;
+}

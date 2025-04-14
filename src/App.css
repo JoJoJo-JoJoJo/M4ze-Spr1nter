@@ -1,0 +1,9 @@
+.app {
+  position: relative;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkolivegreen;
+}
