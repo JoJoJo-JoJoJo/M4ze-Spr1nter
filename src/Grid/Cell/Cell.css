@@ -1,15 +1,19 @@
-.border-top {
-  border-top: min(2px, 5%) solid black;
+.border-u {
+  border-top: 1px solid black;
 }
 
-.border-bottom {
-  border-bottom: min(2px, 5%) solid black;
+.border-d {
+  border-bottom: 1px solid black;
 }
 
-.border-left {
-  border-left: min(2px, 5%) solid black;
+.border-l {
+  border-left: 1px solid black;
 }
 
-.border-right {
-  border-right: min(2px, 5%) solid black;
+.border-r {
+  border-right: 1px solid black;
+}
+
+.cell {
+  z-index: 1;
 }

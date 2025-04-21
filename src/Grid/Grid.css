@@ -1,15 +1,11 @@
 .rows {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: repeat(10, 1fr);
-  /* Temporary gap */
-  gap: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  /* Temporary gap */
-  gap: 2px;
+.row {
+  display: flex;
+  flex-direction: row;
 }

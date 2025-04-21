@@ -1,21 +1,35 @@
 import "./Game.css";
 import Grid from "../Grid/Grid";
-import { TEST_GRID } from "../constants/constants";
-// import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
+import useDfsGenerateMaze from "../custom_hooks/useDfsGenerateMaze";
+import mazeUpdater from "../custom_hooks/mazeUpdater";
+import { difficulties, userStuff } from "../constants/constants";
+import { DiffKeys } from "../constants/types";
 
 const Game = () => {
-  // const [state, dispatch] = useReducer(reducer, useGenerateMaze());
+  //? When the grid size is updated, the grid needs to be re-generated.
+  //? The user request to change the difficulty also needs to be handled.
+  const [diff /*, setDiff */] = useState<DiffKeys>(userStuff.difficulty); // This should probably be in a parent component.
+  const [cols, rows] = difficulties[diff];
+
+  const [maze, dispatch] = useReducer(
+    mazeUpdater,
+    useDfsGenerateMaze(cols, rows)
+  );
+
+  useEffect(() => dispatch({ type: "NEW" }), [diff]);
 
   return (
     <div
       className="game"
-      style={{ width: "50%" }}
+      style={{
+        height: `${600}px`,
+        width: `${(cols / rows) * 600}px`,
+      }}
       aria-live="polite"
       aria-label="Container for game and logic"
     >
-      <Grid
-        grid={TEST_GRID /* Replace with state */}
-      />
+      <Grid grid={maze} gridSize={[cols, rows]} eventDispatch={dispatch} />
     </div>
   );
 };
