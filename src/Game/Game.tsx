@@ -23,8 +23,8 @@ const Game = () => {
     <div
       className="game"
       style={{
-        height: `${600}px`,
-        width: `${(cols / rows) * 600}px`,
+        height: `${756}px`,
+        width: `${(cols / rows) * 756}px`,
       }}
       aria-live="polite"
       aria-label="Container for game and logic"
