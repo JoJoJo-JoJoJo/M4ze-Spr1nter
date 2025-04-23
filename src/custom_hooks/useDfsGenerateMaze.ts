@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Stack, { StackSkeleton } from "../constants/classes/Stack";
 import { dirs, initCellState, oppWall } from "../constants/constants";
 import { DirKeys, CellProps } from "../constants/types";
@@ -28,24 +29,38 @@ export default function useDfsGenerateMaze(
   cols: number,
   rows: number
 ): Array<Array<CellProps>> {
+  const [stack, setStack] = useState<StackSkeleton<CellProps>>(new Stack());
+
+  //todo: Helper functions
+  const stackPush = (cell: CellProps) => {
+    stack.push(cell);
+    console.log("A");
+    setStack(Stack.imutUpdate(stack.data()));
+    console.log("B");
+  };
+
+  const stackPop = (): CellProps => {
+    const rVal: CellProps | undefined = stack.pop();
+    if (typeof rVal === "undefined") {
+      throw new TypeError(
+        "Item should not be popped off the stack if it is already empty."
+      );
+    }
+    setStack(Stack.imutUpdate(stack.data()));
+    return rVal;
+  };
+
   const grid: Array<Array<CellProps>> = generateGrid(cols, rows);
   grid[0][0].locatedAt = "start";
   grid[rows - 1][cols - 1].locatedAt = "end";
-  console.log(
-    `
-    Start: ${JSON.stringify(grid[0][0])}
-    --------------
-    End: ${JSON.stringify(grid[rows - 1][cols - 1])}
-    `
-  );
 
   //todo - Choose the initial cell, mark it as visited and push it to the stack
   const init: CellProps = grid[0][0];
   init.generation.visited = true;
+  //*----------------------------------------------------------------------------------------------------------
 
-  const stack: StackSkeleton<CellProps> = new Stack();
-  stack.push(init);
-  console.log(Stack.imutUpdate(stack.data()));
+  stackPush(init);
+  // console.log(stack.data());
 
   let curCell: CellProps = init;
 
@@ -55,13 +70,7 @@ export default function useDfsGenerateMaze(
   //todo - While the stack is not empty:
   while (stack.size() > 0) {
     //todo - Pop a cell from the stack and make it a current cell
-    const temp = stack.pop();
-    if (typeof temp === "undefined") {
-      throw new TypeError(
-        "Item should not be popped off the stack if it is already empty."
-      );
-    }
-    curCell = temp;
+    curCell = stackPop();
 
     //todo - If the current cell has any neighbors which have not been visited
     const [cx, cy] = curCell.generation.pos;
@@ -78,7 +87,7 @@ export default function useDfsGenerateMaze(
     }
 
     if (dirChoices.length !== 0) {
-      stack.push(curCell);
+      stackPush(curCell);
       const [k, [x, y]] =
         dirChoices[Math.floor(Math.random() * Object.keys.length)];
       const nextCell = grid[cy + y][cx + x];
@@ -86,7 +95,7 @@ export default function useDfsGenerateMaze(
       nextCell.generation.walls[oppWall[k]] = false;
 
       nextCell.generation.visited = true;
-      stack.push(nextCell);
+      stackPush(nextCell);
     }
   }
 
@@ -102,6 +111,6 @@ export default function useDfsGenerateMaze(
  *  [{}, {}, {}, {}] <- ROW
  *  [{}, {}, {}, {}] <- ROW
  * ]
- * 
+ *
  * [x, y] => [COL, ROW]
  */
