@@ -31,21 +31,14 @@ export default function useDfsGenerateMaze(
   const grid: Array<Array<CellProps>> = generateGrid(cols, rows);
   grid[0][0].locatedAt = "start";
   grid[rows - 1][cols - 1].locatedAt = "end";
-  console.log(
-    `
-    Start: ${JSON.stringify(grid[0][0])}
-    --------------
-    End: ${JSON.stringify(grid[rows - 1][cols - 1])}
-    `
-  );
 
   //todo - Choose the initial cell, mark it as visited and push it to the stack
   const init: CellProps = grid[0][0];
   init.generation.visited = true;
 
-  const stack: StackSkeleton<CellProps> = new Stack();
+  let stack: StackSkeleton<CellProps> = new Stack();
   stack.push(init);
-  console.log(Stack.imutUpdate(stack.data()));
+  stack = Stack.imutUpdate(stack.data());
 
   let curCell: CellProps = init;
 
@@ -56,6 +49,7 @@ export default function useDfsGenerateMaze(
   while (stack.size() > 0) {
     //todo - Pop a cell from the stack and make it a current cell
     const temp = stack.pop();
+    stack = Stack.imutUpdate(stack.data());
     if (typeof temp === "undefined") {
       throw new TypeError(
         "Item should not be popped off the stack if it is already empty."
@@ -79,14 +73,18 @@ export default function useDfsGenerateMaze(
 
     if (dirChoices.length !== 0) {
       stack.push(curCell);
+      stack = Stack.imutUpdate(stack.data());
+
       const [k, [x, y]] =
-        dirChoices[Math.floor(Math.random() * Object.keys.length)];
+        dirChoices[Math.floor(Math.random() * dirChoices.length)];
+      
       const nextCell = grid[cy + y][cx + x];
       curCell.generation.walls[k] = false;
       nextCell.generation.walls[oppWall[k]] = false;
 
       nextCell.generation.visited = true;
       stack.push(nextCell);
+      stack = Stack.imutUpdate(stack.data());
     }
   }
 
