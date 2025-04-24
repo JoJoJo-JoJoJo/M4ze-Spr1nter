@@ -1,3 +1,4 @@
+import { Colors } from "./enums";
 import {
   DiffKeys,
   DirKeys,
@@ -16,9 +17,9 @@ const difficulties: Record<DiffKeys, GridSize> = {
 
 // This is just for easier reusability in possible future releases.
 const userStuff: UserInfo = {
-  pathColor: "blue",
-  targetColor: "orange",
-  difficulty: "mastermind",
+  pathColor: Colors.BLUE,
+  targetColor: Colors.ORANGE,
+  difficulty: "tough",
 };
 
 const dirs: Dirs = [

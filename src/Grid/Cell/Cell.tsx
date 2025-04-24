@@ -3,6 +3,7 @@ import * as motion from "motion/react-client";
 import { CellCompProps } from "../../constants/types";
 import { memo } from "react";
 import { userStuff } from "../../constants/constants";
+import { Colors } from "../../constants/enums";
 
 const Cell = ({
   locatedAt,
@@ -28,17 +29,18 @@ const Cell = ({
         aria-label="Tile"
         style={{
           backgroundColor:
-            locatedAt !== null
-              ? locatedAt === "start"
-                ? userStuff.pathColor
-                : userStuff.targetColor
-              : "white",
-          /* Some condition involving being at start/end of maze and/or on active tile */
+            locatedAt === "start"
+              ? userStuff.pathColor
+              : locatedAt === "end"
+              ? userStuff.targetColor
+              : Colors.WHITE,
+          top: "15%",
+          left: "15%",
         }}
         animate={{
-          width: "100%",
-          height: "100%",
-          backgroundColor: isActive ? userStuff.pathColor : "white",
+          width: "70%",
+          height: "70%",
+          // backgroundColor: isActive && locatedAt !== "end" ? userStuff.pathColor : "white",
         }}
         // On mouse drag across tile from adjacent tile (and no wall interfering), dispatch x and y coords from event... or something like that.
       />
