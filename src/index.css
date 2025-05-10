@@ -1,3 +1,5 @@
+/* Remove default styles */
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -56,4 +58,18 @@ table {
 
 #root {
     height: inherit;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+button {
+    outline: "none";
+    cursor: "pointer";
+    background: transparent;
+    border: none;
 }

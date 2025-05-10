@@ -1,15 +1,30 @@
+import DropdownMenu from "../generic-components/DropdownMenu/DropdownMenu";
 import "./Header.css";
 import HomeBtn from "./HomeBtn/HomeBtn";
-import SettingsBtn from "./SettingsBtn/SettingsBtn";
+import SettingsIcon from "./SettingsIcon/SettingsIcon";
+
+//todo: Style HomeBtn similarly to the closed variant of DropdownMenu - title bar between both
 
 const Header = () => {
   return (
-    <div className="header" aria-label="Header">
-      <HomeBtn />
-      <h1>M4ze Spr1nter</h1>
-      <SettingsBtn />
-    </div>
-  )
-}
+    <>
+      <div className="header" aria-label="Header">
+        <HomeBtn />
+        <h1 className="title">M4ze Spr1nter</h1>
+      </div>
+      <DropdownMenu
+        items={[
+          { text: "Hello" },
+          { text: "This" },
+          { text: "Is" },
+          { text: "A" },
+          { text: "Test" },
+        ]}
+      >
+        <SettingsIcon />
+      </DropdownMenu>
+    </>
+  );
+};
 
-export default Header
+export default Header;

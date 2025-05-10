@@ -1,0 +1,35 @@
+.dd-list {
+  list-style: none;
+  padding: 25px;
+  margin-top: 70px;
+  position: absolute;
+  top: 200;
+  right: 0;
+  width: 230;
+}
+
+.dd-list-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.dd-list-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: 40px 0;
+  border: 2px solid white;
+}
+
+.dd-list-item-text {
+  width: 70%;
+  height: 100%;
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
+  font-size: large;
+  color: white;
+}
