@@ -7,7 +7,7 @@ import { Colors } from "../../constants/enums";
 
 const Cell = ({
   locatedAt,
-  // isActive,
+  /* isActive, */
   generation,
   /* eventDispatch, */
   styles,
