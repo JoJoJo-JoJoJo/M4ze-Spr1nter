@@ -1,15 +1,15 @@
 # M4ze Spr1nter
 
-Welcome to M4ze Spr1nter! This is a game with a focus on high speed and precision - solve each maze in as short of a time as possible to set new high scores. From the classic maze to some abominations recommended by this game's community, there's a fun and a challenge for everyone.
+Welcome to M4ze Spr1nter! This is a game with a focus on high speed and precision - solve each maze in as short of a time as possible to set new high scores. From the classic maze to some abominations recommended by this game's community, there's fun and a challenge for everyone.
 
 > Credit to Circlon Tech @FreePik for the maze icon.
 > Credit to motion.dev for the burger SVG icon.
 > Credit to V0 @typcn for the home icon - see [https://v0.app/icon/typcn/home](https://v0.app/icon/typcn/home).
 
-## Upcoming Ideas
+## Upcoming (possible) Ideas
 
 - Path through maze draggable by user
-- Style the draggable path with anime.js
+- Style the draggable path with anime.js or motion.dev
 - Difficulty with invisible walls
 - Difficulty with random portals
 - Insanely cool opening animation for game, involving anime.js SVG `createDrawable()`...
