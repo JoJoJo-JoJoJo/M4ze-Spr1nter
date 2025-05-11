@@ -66,7 +66,7 @@ type New = { type: "NEW" };
 
 type AppActions = Undo | Move | New;
 
-type DiffKeys = "easy" | "medium" | "tough" | "mastermind";
+type DiffKeys = "easy" | "medium" | "tough" | "master";
 type GridSize = [cols: number, rows: number];
 
 type GridProps = {

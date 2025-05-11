@@ -12,7 +12,6 @@ Welcome to M4ze Spr1nter! This is a game with a focus on high speed and precisio
 - Style the draggable path with anime.js
 - Difficulty with invisible walls
 - Difficulty with random portals
-- Create cool dropdown menu for settings
 - Insanely cool opening animation for game, involving anime.js SVG `createDrawable()`...
 
 ## Method for user-draggable path through maze

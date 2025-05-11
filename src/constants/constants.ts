@@ -8,18 +8,20 @@ import {
   UserInfo,
 } from "./types";
 
+const gameHeight: number = 720;
+
 const difficulties: Record<DiffKeys, GridSize> = {
-  easy: [8, 8],
+  easy: [9, 9],
   medium: [18, 18],
   tough: [36, 18],
-  mastermind: [54, 45],
+  master: [72, 36],
 };
 
 // This is just for easier reusability in possible future releases.
 const userStuff: UserInfo = {
   pathColor: Colors.BLUE,
   targetColor: Colors.ORANGE,
-  difficulty: "tough",
+  difficulty: "master",
 };
 
 const dirs: Dirs = [
@@ -55,6 +57,7 @@ const GITHUB_LINK = "https://github.com/JoJoJo-JoJoJo";
 const LAST_UPDATE_DATE = "14/04/2025";
 
 export {
+  gameHeight,
   difficulties,
   GITHUB_LINK,
   LAST_UPDATE_DATE,

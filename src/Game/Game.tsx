@@ -3,7 +3,7 @@ import Grid from "../Grid/Grid";
 import { useEffect, useReducer, useState } from "react";
 import useDfsGenerateMaze from "../custom_hooks/useDfsGenerateMaze";
 import mazeUpdater from "../custom_hooks/mazeUpdater";
-import { difficulties, userStuff } from "../constants/constants";
+import { difficulties, gameHeight, userStuff } from "../constants/constants";
 import { DiffKeys } from "../constants/types";
 
 const Game = () => {
@@ -23,8 +23,8 @@ const Game = () => {
     <div
       className="game"
       style={{
-        height: `${756}px`,
-        width: `${(cols / rows) * 756}px`,
+        height: `${gameHeight + 10}px`,
+        width: `${(cols / rows) * (gameHeight + 10)}px`,
       }}
       aria-live="polite"
       aria-label="Container for game and logic"

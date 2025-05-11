@@ -1,7 +1,7 @@
 .footer {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
   align-items: center;
+  grid-template-columns: repeat(3, 1fr);
   background-color: darkslategrey;
   position: absolute;
   bottom: 0;
@@ -12,6 +12,8 @@
 }
 
 .footer > p {
-  padding: 0 min(2%, 10px);
+  text-align: center;
   color: lightblue;
 }
+
+/* Switch to display grid, align text in center */

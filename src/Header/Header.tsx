@@ -8,10 +8,10 @@ import SettingsIcon from "./SettingsIcon/SettingsIcon";
 const Header = () => {
   return (
     <>
-      <div className="header" aria-label="Header">
-        <HomeBtn />
+      <HomeBtn />
+      <header className="header" aria-label="Header">
         <h1 className="title">M4ze Spr1nter</h1>
-      </div>
+      </header>
       <DropdownMenu
         items={[
           { text: "Hello" },

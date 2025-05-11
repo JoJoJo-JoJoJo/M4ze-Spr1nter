@@ -1,16 +1,14 @@
 .header {
-  width: 88%;
-  height: 8%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: darkslategrey;
   position: absolute;
   top: 0;
-  left: 0;
-  padding-right: 5%;
+  /* left: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 8%;
+  background-color: darkslategrey;
   border-bottom: 3px outset slategrey;
-  z-index: 1;
 }
 
 .title {
@@ -22,15 +20,20 @@
 }
 
 .header-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 8%;
   background-color: darkslategrey;
-  border: none;
-  transition: background-color border .5s ease-out;
+  transition: background-color .5s ease-out;
   border-bottom: 3px outset slategrey;
+  cursor: pointer;
+  color: lightblue;
+  font-size: 1.2rem;
 }
+
 
 .header-btn:hover {
   background-color: slategrey;
-  border-bottom: 3px outset darkslategrey;
-  border-left: 3px outset darkslategrey;
-  cursor: pointer;
 }
