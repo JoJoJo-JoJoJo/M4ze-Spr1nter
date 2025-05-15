@@ -4,8 +4,8 @@ import { useState } from "react";
 import "./MazeIcon.css";
 import { userStuff } from "../../constants/constants";
 
-const MazeIcon = ({ gridX, gridY, bbox }: MazeIconProps) => {
-  const [activeDir, setActiveDir] = useState<"x" | "y" | null>(null);
+const MazeIcon = ({ /* gridX, gridY, */ bbox }: MazeIconProps) => {
+  const [/* activeDir */, setActiveDir] = useState<"x" | "y" | null>(null);
 
   // When icon moves out of bbox, check activeDir and whether the axis value is greater or less in
   // that direction. Then use that to determine which component's bbox to use next.
