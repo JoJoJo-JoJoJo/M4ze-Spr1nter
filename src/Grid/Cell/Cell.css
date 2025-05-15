@@ -1,25 +1,27 @@
-.border-u {
-  border-top: 1px solid black;
-}
-
-.border-d {
-  border-bottom: 1px solid black;
-}
-
-.border-l {
-  border-left: 1px solid black;
-}
-
-.border-r {
-  border-right: 1px solid black;
-}
-
 .cell-border {
   background-color: white;
   position: relative;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.border-u {
+  border-top-color: black;
+}
+
+.border-d {
+  border-bottom-color: black;
+}
+
+.border-l {
+  border-left-color: black;
+}
+
+.border-r {
+  border-right-color: black;
 }
 
 .cell {
-  z-index: 1;
   position: absolute;
 }

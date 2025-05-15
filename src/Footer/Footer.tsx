@@ -1,5 +1,5 @@
 import { GITHUB_LINK, LAST_UPDATE_DATE } from "../constants/constants";
-import Anchor from "../generic_components/Anchor";
+import Anchor from "../generic-components/Anchor";
 import "./Footer.css";
 
 const Footer = () => {

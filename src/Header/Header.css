@@ -1,17 +1,16 @@
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: darkslategrey;
   position: absolute;
   top: 0;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   height: 8%;
+  background-color: darkslategrey;
   border-bottom: 3px outset slategrey;
-  z-index: 1;
 }
 
-.header > h1 {
+.title {
   padding-top: .5%;
   font-size: 2.5rem;
   text-decoration: underline overline;
@@ -19,21 +18,21 @@
   color: lightblue;
 }
 
-.header > button {
-  all: unset;
-  width: 7%;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: darkslategrey;
-  border-top: 1px solid lightblue;
-  border-bottom: 1px solid lightskyblue;
-  border-radius: 3px;
-  padding: 5px;
-  background-image: linear-gradient(to bottom right, lightblue, lightskyblue);
+.header-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 8%;
+  background-color: darkslategrey;
+  transition: background-color .5s ease-out;
+  border-bottom: 3px outset slategrey;
+  cursor: pointer;
+  color: lightblue;
+  font-size: 1.2rem;
 }
 
-.header > button:hover {
-  background-image: linear-gradient(to bottom right, white, lightskyblue);
-  cursor: pointer;
+
+.header-btn:hover {
+  background-color: slategrey;
 }

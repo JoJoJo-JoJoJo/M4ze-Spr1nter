@@ -1,9 +1,69 @@
+import { BoundingBox, Variants } from "motion/react";
+import { ReactElement, ReactSVGElement } from "react";
+
+//* Generic component prop types -------------------------------->
+
 type AnchorProps = {
   href: string;
   text: string;
 };
 
+//* Dropdown menu types -------------------------------->
+
+type ItemsList<T> = T[];
+
+type DropdownMenuProps<T> = {
+  children: ReactElement;
+  items: ItemsList<T>;
+};
+
+type PathProps = {
+  d?: string;
+  variants: Variants;
+  transition?: { duration: number };
+};
+
+//? Icon should not be optional, but leave it for now
+type MenuNode = {
+  icon?: ReactSVGElement;
+  text: string;
+};
+
+type MenuListProps = {
+  items: ItemsList<MenuNode>;
+};
+
+type MenuItemProps = {
+  item: MenuNode;
+};
+
+//* Button component types -------------------------------->
+
+interface BtnProps {
+  children: ReactElement | string;
+  classNames: string[];
+}
+
+interface HoverBtnProps extends BtnProps {
+  onMouseOver: () => void;
+}
+
+interface ClickBtnProps extends BtnProps {
+  onClick: () => void;
+}
+
+//* MazeIcon and Drag types -------------------------------->
+
+type MazeIconProps = {
+  gridX: number;
+  gridY: number;
+  bbox: Partial<BoundingBox>;
+};
+
+//* Game logic types -------------------------------->
+
 interface UserInfo {
+  character: string;
   pathColor: string;
   targetColor: string;
   difficulty: DiffKeys;
@@ -15,7 +75,7 @@ type New = { type: "NEW" };
 
 type AppActions = Undo | Move | New;
 
-type DiffKeys = "easy" | "medium" | "tough" | "mastermind";
+type DiffKeys = "easy" | "medium" | "tough" | "master";
 type GridSize = [cols: number, rows: number];
 
 type GridProps = {
@@ -54,6 +114,13 @@ interface CellCompProps extends CellProps {
 export type {
   UserInfo,
   AnchorProps,
+  HoverBtnProps,
+  ClickBtnProps,
+  DropdownMenuProps,
+  MenuNode,
+  PathProps,
+  MenuListProps,
+  MenuItemProps,
   CellProps,
   GridProps,
   AppActions,
@@ -62,4 +129,5 @@ export type {
   CellCompProps,
   GridSize,
   DiffKeys,
+  MazeIconProps,
 };

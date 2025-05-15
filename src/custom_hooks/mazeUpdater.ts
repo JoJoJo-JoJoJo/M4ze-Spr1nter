@@ -1,6 +1,6 @@
-import { AppActions, InitCellProps } from "../constants/types";
+import { AppActions, CellProps } from "../constants/types";
 
-export default function mazeUpdater(maze: InitCellProps[][], action: AppActions) {
+export default function mazeUpdater(maze: CellProps[][], action: AppActions) {
   switch (action.type) {
     default:
       // Temporary return

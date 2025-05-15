@@ -1,7 +1,7 @@
 enum Colors {
   WHITE = "white",
   BLUE = "lightblue",
-  ORANGE = "orange",
+  ORANGE = "lightsalmon",
 }
 
 export { Colors };
