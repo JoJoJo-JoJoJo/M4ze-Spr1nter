@@ -12,11 +12,13 @@ const Game = () => {
   const [diff /*, setDiff */] = useState<DiffKeys>(userStuff.difficulty); // This should probably be in a parent component.
   const [cols, rows] = difficulties[diff];
 
+  // State for the 2D array of cell objects
   const [maze, dispatch] = useReducer(
     mazeUpdater,
     useDfsGenerateMaze(cols, rows)
   );
 
+  // If somebody changes the difficulty at any point, generate a new maze.
   useEffect(() => dispatch({ type: "NEW" }), [diff]);
 
   return (
@@ -35,3 +37,10 @@ const Game = () => {
 };
 
 export default Game;
+
+/**
+ * Make an overlay for the game, take x and y positions relative to '.game' element.
+ * Pass these down as an update of state to the 'MazeIcon' component.
+ * Use DragDirection Lock to ensure icon moves in a predictable pattern.
+ * Create custom logic for icon transitioning from one bbox to another.
+ */

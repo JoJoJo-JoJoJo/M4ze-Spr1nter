@@ -1,4 +1,4 @@
-import { Variants } from "motion/react";
+import { BoundingBox, Variants } from "motion/react";
 import { ReactElement, ReactSVGElement } from "react";
 
 //* Generic component prop types -------------------------------->
@@ -52,9 +52,18 @@ interface ClickBtnProps extends BtnProps {
   onClick: () => void;
 }
 
+//* MazeIcon and Drag types -------------------------------->
+
+type MazeIconProps = {
+  gridX: number;
+  gridY: number;
+  bbox: Partial<BoundingBox>;
+};
+
 //* Game logic types -------------------------------->
 
 interface UserInfo {
+  character: string;
   pathColor: string;
   targetColor: string;
   difficulty: DiffKeys;
@@ -120,4 +129,5 @@ export type {
   CellCompProps,
   GridSize,
   DiffKeys,
+  MazeIconProps,
 };

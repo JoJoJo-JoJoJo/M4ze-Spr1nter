@@ -19,9 +19,10 @@ const difficulties: Record<DiffKeys, GridSize> = {
 
 // This is just for easier reusability in possible future releases.
 const userStuff: UserInfo = {
+  character: Colors.BLUE,
   pathColor: Colors.BLUE,
   targetColor: Colors.ORANGE,
-  difficulty: "master",
+  difficulty: "tough",
 };
 
 const dirs: Dirs = [

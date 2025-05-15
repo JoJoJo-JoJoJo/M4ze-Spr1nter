@@ -1,5 +1,5 @@
 import "./Cell.css";
-import * as motion from "motion/react-client";
+import { motion } from "motion/react";
 import { CellCompProps } from "../../constants/types";
 import { memo } from "react";
 import { userStuff } from "../../constants/constants";

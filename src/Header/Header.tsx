@@ -14,11 +14,11 @@ const Header = () => {
       </header>
       <DropdownMenu
         items={[
-          { text: "Hello" },
-          { text: "This" },
-          { text: "Is" },
-          { text: "A" },
-          { text: "Test" },
+          { text: "Profile" },
+          { text: "Settings" },
+          { text: "Shop" },
+          { text: "Level" },
+          { text: "New maze" },
         ]}
       >
         <SettingsIcon />
